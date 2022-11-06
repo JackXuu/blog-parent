@@ -49,4 +49,12 @@ public class ArticleController {
         int limit = 3;
         return articleService.newArticle(limit);
     }
+
+    /**
+     * 文章归档
+     */
+    @PostMapping("listArticle")
+    public Result listArticle(){
+        return articleService.listArticle();
+    }
 }
