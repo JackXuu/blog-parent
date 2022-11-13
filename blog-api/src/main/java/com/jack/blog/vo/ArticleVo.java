@@ -24,13 +24,13 @@ public class ArticleVo {
      */
     private String createDate;
 
-    private String author;
+    private UserVo author;
 
-//    private ArticleBodyVo body;
-//
+    private ArticleBodyVo body;
+
     private List<TagVo> tags;
-//
-//    private List<CategoryVo> categorys;
+
+    private CategoryVo category;
 
 }
 

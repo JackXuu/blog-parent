@@ -18,4 +18,5 @@ public interface ArticleService {
 
     Result listArticle();
 
+    Result findArticlebyId(Long articleId);
 }
