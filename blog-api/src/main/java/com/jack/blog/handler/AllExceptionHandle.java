@@ -1,4 +1,4 @@
-package com.jack.blog.handle;
+package com.jack.blog.handler;
 
 import com.jack.blog.vo.Result;
 import org.springframework.web.bind.annotation.ExceptionHandler;
