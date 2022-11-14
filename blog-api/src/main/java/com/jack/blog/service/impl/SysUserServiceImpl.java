@@ -8,7 +8,9 @@ import com.jack.blog.service.SysUserService;
 import com.jack.blog.vo.ErrorCode;
 import com.jack.blog.vo.LoginUserVo;
 import com.jack.blog.vo.Result;
+import com.jack.blog.vo.UserVo;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +28,20 @@ public class SysUserServiceImpl implements SysUserService {
     private LoginService loginService;
 
 
+    @Override
+    public UserVo findUserVoById(Long id) {
+        SysUser sysUser = sysUserMapper.selectById(id);
+        if (sysUser == null){
+            sysUser = new SysUser();
+            sysUser.setId(1L);
+            sysUser.setAvatar("/static/img/logo.b3a48c0.png");
+            sysUser.setNickname("码神之路");
+        }
+        UserVo userVo  = new UserVo();
+        BeanUtils.copyProperties(sysUser,userVo);
+        userVo.setId(String.valueOf(sysUser.getId()));
+        return userVo;
+    }
 
     @Override
     public SysUser findUser(String account, String password) {

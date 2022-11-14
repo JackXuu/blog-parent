@@ -53,9 +53,9 @@ public class ArticleController {
     /**
      * 文章归档
      */
-    @PostMapping("listArticle")
-    public Result listArticle() {
-        return articleService.listArticle();
+    @PostMapping("listArchives")
+    public Result listArchives() {
+        return articleService.listArchives();
     }
 
     @PostMapping("view/{id}")
